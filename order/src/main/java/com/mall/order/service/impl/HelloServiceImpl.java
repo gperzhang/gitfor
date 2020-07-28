@@ -8,7 +8,7 @@ import com.mall.order.service.HelloService;
  **/
 public class HelloServiceImpl implements HelloService {
     @Override
-    public String sayHello(String title) {
-        return "dev01"+title;
+    public String sayHello(String title,int age) {
+        return "dev01:"+title+"--age:"+age;
     }
 }
