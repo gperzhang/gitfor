@@ -5,5 +5,5 @@ package com.mall.order.service;
  * @date 2020/7/26
  **/
 public interface HelloService {
-    String sayHello(String title,int age);
+    String sayHello(String title,int age,Boolean flag);
 }
