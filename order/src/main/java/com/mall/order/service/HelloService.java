@@ -6,4 +6,6 @@ package com.mall.order.service;
  **/
 public interface HelloService {
     String sayHello(Long status,String title,int age,Boolean flag);
+
+    String sayBye(String name);
 }
