@@ -11,4 +11,9 @@ public class OrderServiceImpl implements OrderService {
     public void handler(String orderId) {
         System.out.println("orderId:"+orderId);
     }
+
+    @Override
+    public void request(String orderId) {
+        System.out.println("request:"+orderId);
+    }
 }

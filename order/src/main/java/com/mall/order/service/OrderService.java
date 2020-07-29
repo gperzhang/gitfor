@@ -6,4 +6,5 @@ package com.mall.order.service;
  **/
 public interface OrderService {
     void handler(String orderId);
+    void request(String orderId);
 }
