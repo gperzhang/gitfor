@@ -11,4 +11,9 @@ public class HelloServiceImpl implements HelloService {
     public String sayHello(Long status,String title,int age,Boolean flag) {
         return "dev01:"+title+"--age:"+age;
     }
+
+    @Override
+    public String sayBye(String name) {
+        return "sayBye:"+name;
+    }
 }
