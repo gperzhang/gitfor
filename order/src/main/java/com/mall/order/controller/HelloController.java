@@ -13,5 +13,10 @@ public class HelloController {
     @Autowired
     private HelloService helloService;
 
-
+    public static void main(){
+        System.out.println(HelloService.class);
+    }
+    public String get(){
+        return "123";
+    }
 }
