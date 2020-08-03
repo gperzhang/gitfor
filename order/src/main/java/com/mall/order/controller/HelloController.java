@@ -4,6 +4,9 @@ import com.mall.order.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author acai
  * @date 2020/7/26
@@ -19,4 +22,6 @@ public class HelloController {
     public String get(){
         return "123";
     }
+
+    public List<String> list = new ArrayList<>();
 }
