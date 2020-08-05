@@ -22,7 +22,8 @@ import org.springframework.web.context.WebApplicationContext;
  **/
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = OrderApplication.class)
+//@SpringBootTest(classes = OrderApplication.class)
+@SpringBootTest(classes = OrderApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BaseServiceTest implements ApplicationContextAware {
 
     protected ApplicationContext applicationContext;
