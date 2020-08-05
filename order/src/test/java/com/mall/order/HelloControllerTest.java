@@ -2,11 +2,11 @@ package com.mall.order;
 
 import com.mall.order.service.HelloService;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +49,7 @@ public class HelloControllerTest extends BaseServiceTest{
                 .andReturn();
         String result = mvcResult.getResponse().getContentAsString();
         System.out.println("+++++++++++++++++++++++++++++"+result);
-        Assert.assertNotNull(result);
+        assertThat(result).isNotEmpty();
     }
 
     @Test
@@ -68,7 +68,7 @@ public class HelloControllerTest extends BaseServiceTest{
 
         verify(list,times(2)).get(anyInt());
 
-        Assert.assertEquals("helloworld", result);
+        assertThat(result).isEqualTo("helloword");
     }
 
 }
