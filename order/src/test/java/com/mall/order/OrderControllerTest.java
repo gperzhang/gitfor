@@ -7,15 +7,13 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -45,12 +43,12 @@ public class OrderControllerTest {
     public void orderTest() throws Exception {
         when(orderService.handler(anyString())).thenReturn("66666");
         MvcResult mvcResult = mockMvc.perform(get("/order/list")
-                .param("name","111111")
+                .param("id","111111")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED))
                 .andReturn();
         String result = mvcResult.getResponse().getContentAsString();
 
-
+        assertThat(result).isEqualTo("66666");
 
     }
 }
