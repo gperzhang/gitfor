@@ -1,11 +1,12 @@
 package com.mall.order.controller;
 
 import com.mall.order.service.HelloService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.annotation.Resource;
 
 /**
  * @author acai
@@ -13,15 +14,13 @@ import java.util.List;
  **/
 @Controller
 public class HelloController {
-    @Autowired
+    @Resource
     private HelloService helloService;
 
-    public static void main(){
-        System.out.println(HelloService.class);
+    @GetMapping("/test")
+    @ResponseBody
+    public String testMock(@RequestParam(value = "name") String name){
+        String result = helloService.sayBye(name);
+        return result;
     }
-    public String get(){
-        return "123";
-    }
-
-    public List<String> list = new ArrayList<>();
 }

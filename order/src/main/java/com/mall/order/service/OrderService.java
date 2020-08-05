@@ -5,5 +5,5 @@ package com.mall.order.service;
  * @date 2020/7/29
  **/
 public interface OrderService {
-    void handler(String orderId);
+    String handler(String orderId);
 }
