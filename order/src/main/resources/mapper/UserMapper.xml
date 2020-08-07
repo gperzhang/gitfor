@@ -2,7 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mall.order.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.mall.order.domain.User">
-
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="gmt_create" property="gmtCreate"/>
+        <result column="gmt_modified" property="gmtModified"/>
     </resultMap>
 
     <select id="selectUserById" resultMap="BaseResultMap">
@@ -28,12 +32,18 @@
                 gmt_modified,
             </if>
         </trim>
-        <trim prefix="(" suffix=")" suffixOverrides=",">
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="name != null">
                 #{name},
             </if>
             <if test="age != null">
-                #{age}
+                #{age},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified},
             </if>
         </trim>
     </insert>

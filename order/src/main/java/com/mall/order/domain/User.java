@@ -10,7 +10,7 @@ import java.time.LocalDate;
  **/
 @Data
 public class User {
-    private Long id;
+    private Integer id;
     private String name;
     private Integer age;
     private LocalDate gmtCreate;
