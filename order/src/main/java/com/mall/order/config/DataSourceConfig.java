@@ -1,5 +1,6 @@
 package com.mall.order.config;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import com.zaxxer.hikari.HikariDataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -56,7 +57,7 @@ public class DataSourceConfig {
     @Bean
     public DataSource dataSource(){
         HikariDataSource hikariDataSource = new HikariDataSource();
-        hikariDataSource.setDataSourceClassName(driverClass);
+        hikariDataSource.setDriverClassName(driverClass);
         hikariDataSource.setJdbcUrl(jdbcUrl);
         hikariDataSource.setUsername(userName);
         hikariDataSource.setPassword(passWord);
