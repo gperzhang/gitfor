@@ -54,4 +54,24 @@ public class DbTest {
         userMapper.insertBatch(userList);
     }
 
+    @Test
+    public void testTypeHandler(){
+        User user = new User();
+        user.setName("zj01");
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(3);
+        list.add(4);
+        user.setTitle(list);
+
+        userMapper.insertSelective(user);
+    }
+    @Test
+    public void testSelect(){
+        User user = userMapper.selectUserById(25);
+        List<Integer> title = user.getTitle();
+
+        title.forEach(a-> System.out.println(a));
+    }
+
 }

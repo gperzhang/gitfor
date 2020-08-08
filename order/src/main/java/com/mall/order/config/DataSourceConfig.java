@@ -50,6 +50,7 @@ public class DataSourceConfig {
         //设置mybatis configuration 扫描路径
         sqlSessionFactory.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
         sqlSessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("/mapper/**/*Mapper.xml"));
+        sqlSessionFactory.setTypeHandlersPackage("com.mall.order.domain");
         //自动扫描entity目录
         return sqlSessionFactory;
     }
