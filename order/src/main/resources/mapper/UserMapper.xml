@@ -46,5 +46,20 @@
                 #{gmtModified},
             </if>
         </trim>
+        on duplicate key update
+        name = #{name},
+        gmt_modified = now()
+    </insert>
+
+
+    <insert id="insertBatch" parameterType="list">
+        insert into user (name,age)values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.name},#{item.age})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        name = values(name),
+        age = values(age),
+        gmt_modified = now()
     </insert>
 </mapper>

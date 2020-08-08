@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author acai
  * @date 2020/8/7
@@ -29,11 +32,26 @@ public class DbTest {
     @Test
     public void test01(){
         User user = new User();
-        user.setName("acai02");
+        user.setName("acai09");
         user.setAge(171);
 
         int i = userMapper.insertSelective(user);
-        System.out.println(i);
+        System.out.println(user.getId());
+    }
+
+    @Test
+    public void testList(){
+        List<User> userList = new ArrayList<>();
+        User user1= new User();
+        user1.setName("zhangsi");
+        user1.setAge(19);
+        userList.add(user1);
+        User user2 = new User();
+        user2.setName("lisan");
+        user2.setAge(20);
+        userList.add(user2);
+
+        userMapper.insertBatch(userList);
     }
 
 }
