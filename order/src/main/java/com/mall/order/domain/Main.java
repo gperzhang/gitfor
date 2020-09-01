@@ -1,7 +1,5 @@
 package com.mall.order.domain;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -14,19 +12,19 @@ import java.util.stream.Collectors;
  **/
 public class Main {
     public static void main(String[] args) {
-        List<person> personList = new ArrayList<>();
-        person person1 = new person();
+        List<Person> personList = new ArrayList<>();
+        Person person1 = new Person();
         person1.setName("zj1");
         person1.setAge(11);
-        person person2 = new person();
+        Person person2 = new Person();
         person2.setName("zj2");
         person2.setAge(22);
         personList.add(person1);
         personList.add(person2);
 
-        Map<String, person> collect = personList.stream().collect(Collectors.toMap(person::getName, Function.identity()));
+        Map<String, Person> collect = personList.stream().collect(Collectors.toMap(Person::getName, Function.identity()));
 
-        for (Map.Entry<String, person> entry : collect.entrySet()) {
+        for (Map.Entry<String, Person> entry : collect.entrySet()) {
             System.out.println(entry.getValue().getName()+"---"+entry.getValue().getAge());
         }
 
