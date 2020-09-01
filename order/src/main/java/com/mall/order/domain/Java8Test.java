@@ -54,8 +54,8 @@ public class Java8Test {
         }).collect(Collectors.toList());
 
         //map的值还需要重新做一次转换的
-        Map<String, Long> collect1 = list.stream().collect(Collectors.toMap(Person::getName, p -> Long.valueOf(p.getAge())));
-
+        Map<String, Long> collect1 = list.stream().collect(Collectors.toMap(p->p.getName(), p -> Long.valueOf(p.getAge())));
+        System.out.println(collect1);
 
         //3.将一个list bean转成另一个list的bean
         List<User> userList = list.stream().map(item -> {
@@ -79,21 +79,21 @@ public class Java8Test {
 
 
         //5.分组转换
-//        List<Item> items01 = Arrays.asList(
-//                new Item("apple", 10, new BigDecimal(23.5)),
-//                new Item("apple", 20, new BigDecimal(32.5)),
-//                new Item("orange", 30, new BigDecimal(13.9)),
-//                new Item("orange", 20, new BigDecimal(32.5)),
-//                new Item("orange", 10, new BigDecimal(63.5)),
-//                new Item("orange", 50, new BigDecimal(41.5)),
-//                new Item("peach", 20, new BigDecimal(26.5)),
-//                new Item("peach", 30, new BigDecimal(32.5)),
-//                new Item("peach", 40, new BigDecimal(24.5)),
-//                new Item("peach", 10, new BigDecimal(12.5))
-//        );
-//        Map<BigDecimal, Set<String>> result01 = items01.stream()
-//                .collect(Collectors.groupingBy(Item::getPrice, Collectors.mapping(Item::getName, Collectors.toSet())));
-//        System.out.println(result01);
+        List<Item> items01 = Arrays.asList(
+                new Item("apple", 10, new BigDecimal(23.5)),
+                new Item("apple", 20, new BigDecimal(32.5)),
+                new Item("orange", 30, new BigDecimal(13.9)),
+                new Item("orange", 20, new BigDecimal(32.5)),
+                new Item("orange", 10, new BigDecimal(63.5)),
+                new Item("orange", 50, new BigDecimal(41.5)),
+                new Item("peach", 20, new BigDecimal(26.5)),
+                new Item("peach", 30, new BigDecimal(32.5)),
+                new Item("peach", 40, new BigDecimal(24.5)),
+                new Item("peach", 10, new BigDecimal(12.5))
+        );
+        Map<BigDecimal, Set<String>> result01 = items01.stream()
+                .collect(Collectors.groupingBy(Item::getPrice, Collectors.mapping(Item::getName, Collectors.toSet())));
+        System.out.println(result01);
 
     }
 }
