@@ -1,4 +1,4 @@
-package com.example.goods;
+package com.mall.goods;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
