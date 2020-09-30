@@ -1,6 +1,5 @@
 package com.mall.order.common;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.*;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +20,6 @@ public class RedisUtils {
     private ListOperations<String, String> listOps;
 
 
-    @Autowired
     public RedisUtils(RedisTemplate<String, String> redisTemplate) {
         this.setOps = redisTemplate.opsForSet();
         this.zSetOps = redisTemplate.opsForZSet();

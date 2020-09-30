@@ -17,17 +17,17 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
     @Override
-    @Transactional(rollbackFor = Exception.class,transactionManager = "transactionManager")
+    @Transactional(rollbackFor = Exception.class)
     public int insertUser() {
         User user = new User();
         user.setName("acai");
         user.setAge(17);
         int i = userMapper.insertSelective(user);
-        try {
-            int result = 1/0;
-        }catch (Exception e){
-            throw e;
-        }
-        return i;
+//        try {
+//            int result = 1/0;
+//        }catch (Exception e){
+//            throw e;
+//        }
+        return user.getId();
     }
 }

@@ -3,12 +3,14 @@ package com.mall.order;
 import com.google.common.collect.Lists;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@SpringBootApplication()
+@SpringBootApplication
+@EnableCaching
 public class OrderApplication {
 
     public static void main(String[] args) {

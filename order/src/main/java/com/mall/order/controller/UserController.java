@@ -19,8 +19,8 @@ public class UserController {
 
     @GetMapping("/insert")
     public String insertUser(){
-        userService.insertUser();
-        return "sucessful";
+        int i = userService.insertUser();
+        return "sucessful:"+i;
     }
 
 }

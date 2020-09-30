@@ -35,12 +35,12 @@ public class DataSourceConfig {
     @Value("${spring.datasource.url}")
     private String jdbcUrl;
 
-    @Bean
-    public DataSourceTransactionManager dataSourceTransactionManager() {
-        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager();
-        dataSourceTransactionManager.setDataSource(dataSource());
-        return dataSourceTransactionManager;
-    }
+//    @Bean
+//    public DataSourceTransactionManager dataSourceTransactionManager() {
+//        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager();
+//        dataSourceTransactionManager.setDataSource(dataSource());
+//        return dataSourceTransactionManager;
+//    }
 
     @Bean
     public SqlSessionFactoryBean sqlSessionFactory() throws Exception {
@@ -64,11 +64,11 @@ public class DataSourceConfig {
 
         return hikariDataSource;
     }
-    @Bean
-    public DataSourceTransactionManager transactionManager(){
-        return new DataSourceTransactionManager(dataSource());
-
-    }
+//    @Bean
+//    public DataSourceTransactionManager transactionManager(){
+//        return new DataSourceTransactionManager(dataSource());
+//
+//    }
     @Bean
     public JdbcTemplate jdbcTemplate(DataSource dataSource) {
         return new JdbcTemplate(dataSource);

@@ -53,9 +53,6 @@
                 #{gmtModified},
             </if>
         </trim>
-        on duplicate key update
-        name = #{name},
-        gmt_modified = now()
     </insert>
 
 

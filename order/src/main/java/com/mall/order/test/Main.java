@@ -50,9 +50,9 @@ public class Main {
 
 
 
-//        List<String> list = new ArrayList<>();
-//        list.add("123");
-//        list.add("456");
+        List<String> list = new ArrayList<>();
+        list.add("123");
+        list.add("456");
 //
 //        list.forEach(item->{
 //            if(item.equals("123")){
@@ -62,7 +62,19 @@ public class Main {
 //            System.out.println(item);
 //        });
 
-        String s = "";
-        System.out.println(StringUtils.isEmpty(s));
+        List<String> collect = list.stream().filter(item -> {
+            if (item.equals("123")) {
+                return true;
+            } else {
+                return false;
+            }
+        }).collect(Collectors.toList());
+
+        System.out.println(collect);
+
+
+        User user = new User();
+
+
     }
 }
