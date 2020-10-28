@@ -22,12 +22,12 @@ public class UserServiceImpl implements UserService {
         User user = new User();
         user.setName("acai");
         user.setAge(17);
-        int i = userMapper.insertSelective(user);
-//        try {
-//            int result = 1/0;
-//        }catch (Exception e){
-//            throw e;
-//        }
+        userMapper.insertSelective(user);
+        try {
+            int result = 1/0;
+        }catch (Exception e){
+            throw e;
+        }
         return user.getId();
     }
 }

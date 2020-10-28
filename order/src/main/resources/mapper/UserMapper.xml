@@ -5,13 +5,12 @@
         <result column="id" property="id"/>
         <result column="name" property="name"/>
         <result column="age" property="age"/>
-        <result column="title" property="title" typeHandler="com.mall.order.domain.My"/>
         <result column="gmt_create" property="gmtCreate"/>
         <result column="gmt_modified" property="gmtModified"/>
     </resultMap>
 
     <select id="selectUserById" resultMap="BaseResultMap">
-        select * from user where id = #{id};
+        select * from user_test where id = #{id};
     </select>
 
     <insert id="insertSelective" parameterType="com.mall.order.domain.User">
@@ -26,9 +25,6 @@
             <if test="age !=null">
                 age,
             </if>
-            <if test="title != null">
-                title,
-            </if>
             <if test="gmtCreate != null">
                 gmt_create,
             </if>
@@ -42,9 +38,6 @@
             </if>
             <if test="age != null">
                 #{age},
-            </if>
-            <if test="title != null">
-                #{title},
             </if>
             <if test="gmtCreate != null">
                 #{gmtCreate},

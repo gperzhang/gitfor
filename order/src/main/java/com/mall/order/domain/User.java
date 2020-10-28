@@ -3,6 +3,7 @@ package com.mall.order.domain;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -14,7 +15,6 @@ public class User {
     private Integer id;
     private String name;
     private Integer age;
-    private List<Integer> title;
-    private LocalDate gmtCreate;
-    private LocalDate gmtModified;
+    private LocalDateTime gmtCreate;
+    private LocalDateTime gmtModified;
 }

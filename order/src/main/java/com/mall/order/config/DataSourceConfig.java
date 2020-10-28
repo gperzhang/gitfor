@@ -19,7 +19,7 @@ import javax.sql.DataSource;
  * @date 2020/8/7
  **/
 @Configuration
-@EnableTransactionManagement
+//@EnableTransactionManagement
 @MapperScan("com.mall.order.mapper")
 public class DataSourceConfig {
 

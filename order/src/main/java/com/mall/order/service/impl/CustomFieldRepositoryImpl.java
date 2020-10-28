@@ -7,7 +7,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
-import sun.rmi.runtime.Log;
 
 import javax.annotation.Resource;
 
@@ -16,7 +15,7 @@ import javax.annotation.Resource;
  * @date 2020/9/18
  **/
 @Repository
-@CacheConfig(cacheManager = "cacheManager" , cacheNames = "cache")
+@CacheConfig(cacheNames = "user")
 @Slf4j
 public class CustomFieldRepositoryImpl implements CustomFieldRepository {
     @Resource
