@@ -62,19 +62,29 @@ public class Main {
 //            System.out.println(item);
 //        });
 
-        List<String> collect = list.stream().filter(item -> {
-            if (item.equals("123")) {
-                return true;
-            } else {
-                return false;
-            }
-        }).collect(Collectors.toList());
+//               List<String> collect = list.stream().filter(item -> {
+//            if (item.equals("123")) {
+//                return true;
+//            } else {
+//                return false;
+//            }
+//        }).collect(Collectors.toList());
+//
+//        System.out.println(collect);
+//
+//
+//        User user = new User();
 
-        System.out.println(collect);
+        String s = "";
+        String[] split = s.split("\n");
+        String responseResult = split[5];
 
+//        Response:data：{code: 40000013, data: null, resultMsg: 请求过于频繁,请稍后重试, requestId: null, success: false}
+        String result  = responseResult.split("：")[1];
+        System.out.println(result);
+        String code = result.split(",")[0].split(": ")[1];
+        System.out.println(code);
 
-        User user = new User();
-
-
+        List<Long> list1 = new ArrayList<>();
     }
 }
