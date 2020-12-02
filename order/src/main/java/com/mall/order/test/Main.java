@@ -6,7 +6,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -75,16 +77,28 @@ public class Main {
 //
 //        User user = new User();
 
-        String s = "";
-        String[] split = s.split("\n");
-        String responseResult = split[5];
+//        String s = "";
+//        String[] split = s.split("\n");
+//        String responseResult = split[5];
+//
+////        Response:data：{code: 40000013, data: null, resultMsg: 请求过于频繁,请稍后重试, requestId: null, success: false}
+//        String result  = responseResult.split("：")[1];
+//        System.out.println(result);
+//        String code = result.split(",")[0].split(": ")[1];
+//        System.out.println(code);
+//
+//        List<Long> list1 = new ArrayList<>();
 
-//        Response:data：{code: 40000013, data: null, resultMsg: 请求过于频繁,请稍后重试, requestId: null, success: false}
-        String result  = responseResult.split("：")[1];
-        System.out.println(result);
-        String code = result.split(",")[0].split(": ")[1];
-        System.out.println(code);
+        Map<String,String> map = new HashMap<>();
+        map.put("key1","111");
+        String s = map.putIfAbsent("key1", "value1");
 
-        List<Long> list1 = new ArrayList<>();
+
+        String key2 = map.computeIfAbsent("key2", k -> "222");
+
+        System.out.println(key2);
+
+        System.out.println(map.get("key2"));
+
     }
 }

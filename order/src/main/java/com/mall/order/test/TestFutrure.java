@@ -22,6 +22,8 @@ public class TestFutrure {
 //        System.out.println("耗时:"+(System.currentTimeMillis()-time1));
 
 
+
+
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3,5,1, TimeUnit.SECONDS,new SynchronousQueue<>(),new ThreadPoolExecutor.AbortPolicy());
 
         try {
